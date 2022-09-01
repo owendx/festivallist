@@ -33,7 +33,7 @@
 		<div class="card">
 			<div class="card-content">
 				<span class="card-title">
-					<p>A {{ ticket.type }} for {{ ticket.name }}></p>
+					<p>A {{ ticket.type }} for {{ ticket.name }}</p>
 				</span>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 				</span>
 			</div>
 			<div class="card-action">
-				<form action="{% url 'assoc_ticket' ticket.id ticket.id %}" method="post">
+				<form action="{% url 'assoc_ticket' festival.id ticket.id %}" method="post">
 					{% csrf_token %}
 					<button type="submit" class="btn">Add</button>
 				</form>
