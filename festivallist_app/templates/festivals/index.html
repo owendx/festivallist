@@ -5,15 +5,17 @@
 
     {% for festival in festivals %}
         <div class="card">
-            <div class="card=content">
-                <span class="card-title">{{ festival.name }}</span>
-                <p>Date: {{ festival.date }}</p>
-                <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
-                <p>Genre: {{ festival.genre }}</p>
-                <p>Description: {{ festival.description }}</p>
-                <p>Location: {{ festival.location }}</p>
-                <p>Attendance: {{ festival.attendance }}</p>
-            </div>
+            <a href="{% url 'detail' festival.id %}">
+                <div class="card=content">
+                    <span class="card-title">{{ festival.name }}</span>
+                    <p>Date: {{ festival.date }}</p>
+                    <p>Website: <a href="{{ festival.website }}">{{ festival.website }}</a></p>
+                    <p>Genre: {{ festival.genre }}</p>
+                    <p>Description: {{ festival.description }}</p>
+                    <p>Location: {{ festival.location }}</p>
+                    <p>Attendance: {{ festival.attendance }}</p>
+                </div>
+            </a>
         </div>
     {% endfor %}
 
