@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Festival List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Festival List</a></li>
+        </ul>
+          <ul class="right">
+              <li><a href="/about">About</a></li>
+              <li><a href="{% url 'tickets_create' %}">Add a Ticket</a></li>
+              <li><a href="{% url 'tickets_index' %}">View All Tickets</a></li>
+              <li><a href="{% url 'index' %}">View All The Festivals</a></li>
+              <li><a href="{% url 'festivals_create' %}">Add A Festival</a></li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer class="page-footer">
+    <div class="right">All Rights Reserved, &copy; 2022 Festival List &nbsp;</div>
+  </footer>
+</body>
+</html>

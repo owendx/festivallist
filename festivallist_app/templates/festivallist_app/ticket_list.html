@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ticket List</h1>
+
+{% for ticket in ticket_list %}
+  <a href="{% url 'tickets_detail' ticket.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ ticket.name }}</span>
+            <p>Price: {{ ticket.price }}</p>
+                        <p>Type: {{ ticket.type }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
